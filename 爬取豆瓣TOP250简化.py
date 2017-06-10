@@ -22,5 +22,5 @@ for k in range(11):
 		lists.append(movie)
 		
 	for j in range(len(lists)):
-		tplt = "{0:^10}\t{1:{4}^10}\t{2:^10}\t{3:^10}"
+		tplt = "{0:^10}\t{1:{4}<10}\t{2:^10}\t{3:10}"
 		print(tplt.format(lists[j]['rank'],lists[j]['name'],lists[j]['score'],lists[j]['quote'],chr(12288)))
