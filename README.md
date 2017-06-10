@@ -1,7 +1,7 @@
 # crawlDouBanMoviesTOP250
 运行方法
 ```
-python 
+python 爬取豆瓣TOP250简化.py
 ```
 需要的库
 ```
