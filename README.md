@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 四六级成绩可视化
 -----
 运行方法
@@ -11,3 +12,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pylab import mpl 
 ```
+=======
+# crawlDouBanTOP250
+>>>>>>> 6e0855ea04f5582a5798e28cc0e2f41d27a09370
