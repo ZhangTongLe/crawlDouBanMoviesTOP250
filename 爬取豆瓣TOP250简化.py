@@ -23,29 +23,4 @@ for k in range(11):
 		
 	for j in range(len(lists)):
 		tplt = "{0:^10}\t{1:{4}^10}\t{2:^10}\t{3:^10}"
-		# tplt = "{:2}\t{:4}\t{:6}\t{:8}"
-		# print(tplt.format(lists[j]['rank'],lists[j]['name'],lists[j]['score'],lists[j]['quote'],chr(12288)))
-
-	db = pymysql.connect(host = "120.24.68.147",user = "root",password = "oneinstack",db = "JavaMySQL",charset = "utf8mb4")
-	cursor = db.cursor()
-	cursor.execute("DROP TABLE IF EXISTS movies")
-	createTab = """CREATE TABLE movies(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(20) NOT NULL,
-	rank VARCHAR(4) NOT NULL,
-	score VARCHAR(4) NOT NULL,
-	quote VARCHAR(50) 
-		)"""
-	cursor.execute(createTab)
-	for l in range(2):
-		sql = "INSERT INTO 'movies'('name','rank','score','quote') VALUES(%s,%s,%s,%s)"
-		try:
-			# cursor.execute(sql,(lists[l]['rank'],lists[l]['name'],lists[l]['score'],lists[l]['quote']))
-			cursor.execute(sql,(l["name"], l["rank"], l["score"], l["quote"]))
-			db.commit()
-			print("Success")
-		# print(i["name"]+" is success")
-		except:
-			db.rollback()
-			print("Error")
-
-db.close()
+		print(tplt.format(lists[j]['rank'],lists[j]['name'],lists[j]['score'],lists[j]['quote'],chr(12288)))
