@@ -12,4 +12,8 @@ python 爬取豆瓣电影TOP250.py
 import requests
 from bs4 import BeautifulSoup
 ```
-有待完善
+对于爬取豆瓣电影TOP250存储到MySQL.py的说明
+第28行更改为你自己的数据库即可,不用手动创建表,但是要手动创建Movies这个数据库
+```
+db = pymysql.connect(host = "IP",user = "root",password = "password",db = "Moives",charset = "utf8mb4")
+```
