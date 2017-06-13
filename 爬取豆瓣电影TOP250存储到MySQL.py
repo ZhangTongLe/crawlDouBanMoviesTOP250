@@ -25,7 +25,7 @@ for k in range(11):
 		# tplt = "{:2}\t{:4}\t{:6}\t{:8}"
 		# print(tplt.format(lists[j]['rank'],lists[j]['name'],lists[j]['score'],lists[j]['quote'],chr(12288)))
 
-db = pymysql.connect(host = "120.24.68.147",user = "root",password = "oneinstack",db = "JavaMySQL",charset = "utf8mb4")
+db = pymysql.connect(host = "IP",user = "root",password = "password",db = "Moives",charset = "utf8mb4")
 cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS movies")
 createTab = """CREATE TABLE movies(
@@ -37,7 +37,7 @@ createTab = """CREATE TABLE movies(
 )"""
 cursor.execute(createTab)
 for l in range(len(lists)):
-	sql = "INSERT INTO `movies`(`name`,`rank`,`score`,`quote`) VALUES(%s,%s,%s,%s)"
+	sql = "INSERT INTO `movies`(`name`,`rank`,`score`,`quote`) VALUES(%s,%s,%s,%s)" #注意这个是tab键上面的,不是单引号
 	# sql = "INSERT INTO 'movies'('name','rank','score','quote') VALUES(%s,%s,%s,%s)"
 	try:
 		cursor.execute(sql,(lists[l]['name'],lists[l]['rank'],lists[l]['score'],lists[l]['quote']))
